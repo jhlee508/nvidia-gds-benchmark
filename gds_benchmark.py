@@ -48,9 +48,9 @@ def init_gds_files(gdsio_path, output_dir, file_size, device, workers):
 
 def gds_benchmark(gdsio_path, output_dir, device, numa_node, load):
     file_size = '1G'
-    io_sizes = ['128K', '256K', '512K', '1M'] # ['128K', '256K', '512K', '1M', '4M', '16M', '64M', '128M']
+    io_sizes = ['256K', '512K', '1M', '4M'] # ['128K', '256K', '512K', '1M', '4M', '16M', '64M', '128M']
     threads = [1, 4, 8, 16, 32]
-    time = '10'
+    time = '30'
     
     # See if benchmark files need to be generated.
     if not os.path.isfile(os.path.join(output_dir, f'gdsio.{max(threads) - 1}')):
@@ -110,14 +110,14 @@ def plot_results(device, numa_node, load):
                         col='IO Size', 
                         hue='Transfer Type', 
                         sharey=False)
-    g.figure.savefig('image/gds_plot_latency.png')
+    g.figure.savefig('gds_plot_latency.png')
     g = sns.catplot(df, kind='bar', 
                         x='Threads', 
                         y='Throughput (GiB/s)', 
                         col='IO Size', 
                         hue='Transfer Type', 
                         sharey=False)
-    g.figure.savefig('image/gds_plot_throughput.png')
+    g.figure.savefig('gds_plot_throughput.png')
 
 
 if __name__ == '__main__':

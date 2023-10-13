@@ -6,3 +6,4 @@ cufile.log
 
 # benchmark output
 *.csv
+*.png
