@@ -1,0 +1,8 @@
+# log files
+cufile.log
+
+# mount directory
+/gds-files
+
+# benchmark output
+*.csv

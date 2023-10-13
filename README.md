@@ -148,6 +148,11 @@ mount | grep /dev/nvme0n1 # this should print '/dev/nvme0n1 on /gds-files type e
 ```bash
 python gds_benchmark.py
 ```
+### GDS Throughput Performance 
+![GDS Throughput Performance](image/gds_plot_throughput.png)
+
+### GDS Latency Performance 
+![GDS Latency Performance](image/gds_plot_latency.png)
 
 ## Reference
 
