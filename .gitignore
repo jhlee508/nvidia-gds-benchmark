@@ -2,7 +2,7 @@
 cufile.log
 
 # mount directory
-/gds-files
+/gds_files
 
 # benchmark output
 *.csv

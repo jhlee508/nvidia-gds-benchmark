@@ -137,10 +137,20 @@ Currently, EXT4 and XFS are the only block device based filesystem that GDS supp
 mkfs.ext4 /dev/nvme0n1
 
 # the ext4 file system must be mounted with the journaling mode set to 'data=ordered'
-mount -o data=ordered /dev/nvme0n1 /gds-files # any directory location you want to mount
+mount -o data=ordered /dev/nvme0n1 /gds_files # any directory location you want to mount
 
 # check mounted mode
-mount | grep /dev/nvme0n1 # this should print '/dev/nvme0n1 on /gds-files type ext4 (rw,relatime,data=ordered)'
+mount | grep /dev/nvme0n1 # this should print '/dev/nvme0n1 on /gds_files type ext4 (rw,relatime,data=ordered)'
+```
+
+```bash
+# If you want to un-mount
+sudo umount /dev/nvme0n1
+
+# If target is busy, try as followings
+fuser -cu /dev/nvme0n1 # find who is using the mount target
+fuser -ck /dev/nvme0n1 # kill process
+sudo umount /dev/nvme0n1 # try again
 ```
 
 

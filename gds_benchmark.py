@@ -23,7 +23,7 @@ transfer_type = {
     } 
 
 gdsio_path = '/usr/local/cuda-12.0/gds/tools/gdsio' # PATH for gdsio
-gds_dir = '/home/n4/jaehwan/project/nvidia-gpudirect-example/gds-files' # NVMe mounted location
+gds_dir = '/home/n4/jaehwan/project/nvidia-gpudirect-example/gds_files' # NVMe mounted location
 device = 0
 numa_node = 0
 load = 'SEQ_READ'
