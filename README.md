@@ -107,7 +107,7 @@ gdsio -f /dev/nvme0n1 -d 0 -w 4 -s 1G -i 1M -I 1 -x 0
     ```
 
 - NVMeOF Client Configuration
-    - Here we need to install [nvme-cli](https://github.com/linux-nvme/nvme-cli) for executing NVMe commands. Follow the nvme-cli repository installation guide.
+    - Here we need to install [nvme-cli](https://github.com/linux-nvme/nvme-cli) for executing NVMe commands. Follow the nvme-cli repo install guide.
 
     ```bash
     # Load kernel modules
