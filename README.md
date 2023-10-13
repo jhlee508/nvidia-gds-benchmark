@@ -160,10 +160,10 @@ sudo umount /dev/nvme0n1 # try again
 python gds_benchmark.py
 ```
 ### GDS Throughput Performance 
-![GDS Throughput Performance](image/gds_plot_throughput.png)
+![GDS Throughput Performance](image/sample_gds_plot_throughput.png)
 
 ### GDS Latency Performance 
-![GDS Latency Performance](image/gds_plot_latency.png)
+![GDS Latency Performance](image/sample_gds_plot_latency.png)
 
 ## Reference
 
