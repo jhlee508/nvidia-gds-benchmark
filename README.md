@@ -124,7 +124,7 @@ gdsio -f /dev/nvme0n1 -d 0 -w 4 -s 1G -i 1M -I 1 -x 0 -V
 
   ```bash
   # If you want to disconnect from the target, run the following command
-  nvme disconnect -d /dev/nvme0n1
+  nvme disconnect -n nvme_subsystem
   ```
     
 For persistent setup, refer to [NVMeOF Configuration Docs](https://enterprise-support.nvidia.com/s/article/howto-configure-nvme-over-fabrics).
