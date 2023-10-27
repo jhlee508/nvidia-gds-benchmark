@@ -49,7 +49,7 @@ sudo sh cuda_12.0.0_525.60.13_linux.run --kernelobjects # 'nvidia-fs' kernel obj
 ```bash
 # After installation, make sure to include PATH and LD_LIBRARY_PATH
 export PATH="/usr/local/cuda-12.0/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-12.0/lib64:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-12.0/lib64:$LD_LIBRARY_PATH"
 ```
 
 ### Check installation
