@@ -128,9 +128,9 @@ For persistent setup, refer to [NVMeOF Configuration Docs](https://enterprise-su
 - NVMe Server (Target) Termination
   ```bash
   rm -f /sys/kernel/config/nvmet/ports/1/subsystems/nvme_subsystem
-  rmdir ports/1
-  rmdir subsystems/nvme_subsystem/namespaces/1
-  rmdir subsystems/nvme_subsystem
+  rmdir /sys/kernel/config/nvmet/ports/1
+  rmdir /sys/kernel/config/nvmet/subsystems/nvme_subsystem/namespaces/1
+  rmdir /sys/kernel/config/nvmet/subsystems/nvme_subsystem
   ```
 
 - NVMeOF Client (Initiator) Termination 
