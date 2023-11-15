@@ -70,7 +70,7 @@ gdsio -f /dev/nvme0n1 -d 0 -w 4 -s 1G -i 1M -I 1 -x 0 -V
 ```
 
 ### NVMeOF Setup for remote storage
-- NVMe Server Configuration
+- NVMe Server (Target) Configuration
 
     ```bash
     # Load kernel modules
@@ -106,7 +106,7 @@ gdsio -f /dev/nvme0n1 -d 0 -w 4 -s 1G -i 1M -I 1 -x 0 -V
     dmesg | grep nvme # this should print 'nvmet_rdma: enabling port 1 (X.X.X.X:4420)'
     ```
 
-- NVMeOF Client Configuration
+- NVMeOF Client (Initiator) Configuration
 
   Here we need to install [nvme-cli](https://github.com/linux-nvme/nvme-cli) for executing NVMe commands. Follow the nvme-cli repo install guide.
 
@@ -122,12 +122,23 @@ gdsio -f /dev/nvme0n1 -d 0 -w 4 -s 1G -i 1M -I 1 -x 0 -V
   sudo nvme connect -t rdma -n nvme_subsystem -a X.X.X.X -s 4420
   ```
 
+For persistent setup, refer to [NVMeOF Configuration Docs](https://enterprise-support.nvidia.com/s/article/howto-configure-nvme-over-fabrics).
+
+### NVMeOF Termination
+- NVMe Server (Target) Termination
+  ```bash
+  rm -f /sys/kernel/config/nvmet/ports/1/subsystems/nvme_subsystem
+  rmdir ports/1
+  rmdir subsystems/nvme_subsystem/namespaces/1
+  rmdir subsystems/nvme_subsystem
+  ```
+
+- NVMeOF Client (Initiator) Termination 
+
   ```bash
   # If you want to disconnect from the target, run the following command
   nvme disconnect -n nvme_subsystem
   ```
-    
-For persistent setup, refer to [NVMeOF Configuration Docs](https://enterprise-support.nvidia.com/s/article/howto-configure-nvme-over-fabrics).
 
 ## Mounting a Local Filesystem for GDS
 Currently, EXT4 and XFS are the only block device based filesystem that GDS supports.
